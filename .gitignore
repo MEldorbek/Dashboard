@@ -3,7 +3,7 @@ DC_Store
 .LSOverride
 .vs
 
-app/*.html
+app/**/*.html
 *.log
 node_modules/
 app/css/
