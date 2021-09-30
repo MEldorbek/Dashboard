@@ -10,7 +10,7 @@ let gulp = require('gulp'),
     pug = require('gulp-pug');
 
 gulp.task('pug', function(){
-    return gulp.src('app/*.pug')
+    return gulp.src('app/**/*.pug')
         .pipe(pug({
             pretty: true
         }))

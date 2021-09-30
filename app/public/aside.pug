@@ -1,0 +1,13 @@
+mixin list(id, ...items)
+    ul(class= id)
+        each item in items 
+            li
+                a(href="#")= item 
+aside.aside 
+    .aside__user 
+        .user__img(style="background-image: url(images/user.jpg);") 
+        .user__name Maxmudov Eldorbek
+        .user__job Front-end Developer
+        button.user__btn  Update profile
+    nav.aside__menu
+        +list('aside__menu-list', 'Dashboard', 'Jobs', 'Docs', 'Connections')
