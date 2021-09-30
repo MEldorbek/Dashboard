@@ -1,0 +1,16 @@
+mixin list(id, ...items)
+    div(class=id)
+        each item in items 
+            a(href="#")= item 
+input#check(type="checkbox")
+label(for="check")
+    i.fas.fa-bars#btn
+    i.fas.fa-times#cancel 
+.sidebar 
+    .sidebar__user 
+        .user__img(style="background-image: url(images/user.jpg);") 
+        .user__name Maxmudov Eldorbek
+        .user__job Front-end Developer
+        a.user__btn(href="#")  Update profile
+    nav.sidebar__menu
+        +list('aside__menu-list', 'Dashboard', 'Jobs', 'Docs', 'Connections', 'Other')

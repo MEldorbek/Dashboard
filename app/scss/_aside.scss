@@ -1,6 +1,160 @@
-.user__img{
-    width: 100px;
-    height: 100px;
-    background-size: cover;
-    border-radius: 50%;
+.sidebar {
+    background-color: #2a58ad;
+    color: #fff;
+    position: fixed;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    padding: 15px;
+    font-family: "Lato", sans-serif;
+    overflow-y: scroll;
+    transition: all .5s;
+    &::-webkit-scrollbar{
+        display: none;
+    }
+    &__user {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 250px;
+        & * {
+            margin-bottom: 10px;
+        }
+        & a.user__btn {
+            text-transform: none;
+            color: #4681d4;
+            &:hover {
+                background-color: rgb(11, 188, 233);
+                color: #fff;
+                box-shadow: 0px 0px 15px 0px rgb(11, 188, 233);
+            }
+        }
+    }
+    & a {
+        color: #fff;
+        text-transform: uppercase;
+    }
+    &__menu a {
+        padding: 50px 0 10px;
+        text-align: center;
+        position: relative;
+        display: block;
+        width: 100%;
+        transition: all 0.5s;
+        border: 1px solid transparent;
+
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.6);
+            text-shadow: 0px 0px 5px #000;
+            color: #000;
+            border-color: rgb(11, 188, 233);
+            box-shadow: 0px 0px 15px 5px rgb(11, 188, 233), inset 0px 0px 15px 5px #fff;
+            &::before{
+                background-color: #000;
+            }
+        }
+        &::before {
+            position: absolute;
+            content: "";
+            width: 50px;
+            height: 40px;
+            top: 10px;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            background-color: #fff;
+            mask-size: cover;
+            transition: all .5s;
+        }
+        &:not(:nth-child(-n+4))::before {
+            mask: url(../images/folder-open-regular.svg);
+            width: 45px;
+        }
+        &:nth-child(1)::before {
+            mask: url(../images/laptop-code-solid.svg);
+        }
+        &:nth-child(2)::before {
+            width: 30px;
+            mask: url(../images/clipboard-list-solid.svg);
+        }
+        &:nth-child(3)::before {
+            width: 30px;
+            mask: url(../images/file-alt-regular.svg);
+        }
+        &:nth-child(4)::before {
+            mask: url(../images/user-friends-solid.svg);
+        }
+    }
+}
+
+.user {
+    &__img {
+        width: 150px;
+        height: 150px;
+        background-size: cover;
+        border-radius: 50%;
+        border: 5px solid #fff;
+        box-shadow: 0px 0px 15px 0px rgb(11, 188, 233);
+    }
+    &__name {
+        font-size: 20px;
+        font-weight: bold;
+    }
+    &__job {
+        color: #4681d4;
+        text-shadow: 0px 0px 5px #000;
+    }
+
+    &__btn {
+        padding: 5px 10px;
+        border-radius: 20px;
+        border: 1px solid rgb(11, 188, 233);
+        background-color: transparent;
+        text-shadow: 0px 0px 5px #000;
+        transition: all 0.5s;
+    }
+}
+#check {
+    display: none;
+    &:checked~.sidebar {
+        left: 0;
+    }
+    &:checked~label #btn {
+        left: 0px;
+        opacity: 0;
+        pointer-events: none;
+    }
+    &:checked~label #cancel {
+        left: 195px;
+    }
+    &:checked~.sections {
+        margin-left: 250px;
+    }
+}
+
+label #btn,
+label #cancel {
+    position: absolute;
+    cursor: pointer;
+    background: rgba(#042331, 0.8);
+    border-radius: 3px;
+}
+
+label #btn {
+    left: 20px;
+    top: 20px;
+    font-size: 35px;
+    color: #fff;
+    padding: 6px 12px;
+    transition: all .5s;
+}
+
+label #cancel {
+    z-index: 1111;
+    left: -195px;
+    top: 10px;
+    font-size: 30px;
+    color: #0a5275;
+    padding: 4px 9px;
+    transition: all .5s ease;
 }
