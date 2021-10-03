@@ -1,0 +1,21 @@
+.bbody {
+    background-color: rgba(#fff, 0.7);
+    margin: 15px;
+    border-radius: 10px;
+    padding: 10px 0 20px;
+    &__text {
+        margin: 0 0 10px;
+        text-align: center;
+    }
+    &__table {
+        border: 1px solid #000;
+        border-spacing: 0;
+        width: 100%;
+        & td {
+            border: 1px solid #000;
+        }
+        & th{
+            border: 1px solid #000;
+        }
+    }
+}
