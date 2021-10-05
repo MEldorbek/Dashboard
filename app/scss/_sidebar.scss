@@ -8,8 +8,8 @@
     padding: 15px;
     font-family: "Lato", sans-serif;
     overflow-y: scroll;
-    transition: all .5s;
-    &::-webkit-scrollbar{
+    transition: all 0.5s;
+    &::-webkit-scrollbar {
         display: none;
     }
     &__user {
@@ -49,7 +49,7 @@
             color: #000;
             border-color: rgb(11, 188, 233);
             box-shadow: 0px 0px 15px 5px rgb(11, 188, 233), inset 0px 0px 15px 5px #fff;
-            &::before{
+            &::before {
                 background-color: #000;
             }
         }
@@ -64,9 +64,9 @@
             margin: 0 auto;
             background-color: #fff;
             mask-size: cover;
-            transition: all .5s;
+            transition: all 0.5s;
         }
-        &:not(:nth-child(-n+4))::before {
+        &:not(:nth-child(-n + 4))::before {
             mask: url(../images/folder-open-regular.svg);
             width: 45px;
         }
@@ -116,19 +116,24 @@
 }
 #check {
     display: none;
-    &:checked~.sidebar {
-        left: 0;
-    }
-    &:checked~label #btn {
-        left: 0px;
-        opacity: 0;
-        pointer-events: none;
-    }
-    &:checked~label #cancel {
-        left: 195px;
-    }
-    &:checked~.sections {
-        margin-left: 250px;
+    &:checked {
+        & ~ .sidebar {
+            left: 0;
+        }
+        & ~ label #btn {
+            left: 0px;
+            opacity: 0;
+            pointer-events: none;
+        }
+        & ~ label #cancel {
+            left: 195px;
+        }
+        & ~ .sections {
+            margin-left: 250px;
+            & .footer{
+                width: calc(100% - 250px);
+            }
+        }
     }
 }
 
@@ -146,7 +151,7 @@ label #btn {
     font-size: 35px;
     color: #fff;
     padding: 6px 12px;
-    transition: all .5s;
+    transition: all 0.5s;
 }
 
 label #cancel {
@@ -156,5 +161,5 @@ label #cancel {
     font-size: 30px;
     color: #0a5275;
     padding: 4px 9px;
-    transition: all .5s ease;
+    transition: all 0.5s ease;
 }

@@ -1,26 +1,38 @@
 // start bbody
 
+mixin table(className)
+    - var numi = 70;
+    - var numj = 7;
+    - var n = 0;
+    - var k = 1;
+    table(class=className)
+        thead 
+            tr
+                while n < numj 
+                    if n == 0 
+                        th T/R
+                    else
+                        th Nomi
+                    - n++
+
+        tbody
+            while k <= numi
+                tr
+                - k++;
+                    - for ( n=0; n < numj; n++) {
+                        if n == 0 
+                            th= k-1
+                        else
+                            td Nomi
+                    - }
+
+
+
 section.bbody
     .container
         h1.bbody__text.header__text Table Name
-        table.bbody__table 
-            thead 
-                tr
-                    th T/R 
-                    th Nomi
-                    th Nomi
-                    th Nomi
-            tbody 
-                tr 
-                    td 1
-                    td nom
-                    td nom
-                    td nom
-                tr 
-                    td 2
-                    td nom
-                    td nom
-                    td nom
-                
+        +table("bbody__table") 
+
+
 
 // end bbody

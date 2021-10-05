@@ -1,0 +1,18 @@
+.sections {
+    background-size: cover;
+    height: 100vh;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: all 0.5s;
+}
+
+.bg{
+    background-color: rgba(#fff, 0.7);
+    padding: 0 70px;
+}
+
+@import 'header';
+@import 'bbody';
+@import 'footer';

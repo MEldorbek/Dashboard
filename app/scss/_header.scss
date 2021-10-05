@@ -1,16 +1,6 @@
-.sections {
-    
-    background-size: cover;
-    height: 100vh;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    transition: all 0.5s;
-}
+
 
 .header{
-    background-color: rgba(#fff, 0.7);
-    padding: 0 70px;
     &__inner{
         display: flex;
         justify-content: space-between;
@@ -20,12 +10,14 @@
     &__text{
         color: #ccc;
         text-shadow: 0 0 5px rgba(#000, 1);
+        user-select: none;
     }
     &__btn{
         color: rgba(#000, 0.5);
         padding: 5px 15px;
         border: 1px solid rgb(11, 188, 233);
         border-radius: 20px;
+        transition: all .5s;
         &:hover{
             box-shadow: inset 0px 0px 15px 5px rgba(11, 188, 233, 0.5), 0px 0px 15px 5px rgba(#fff, 0.5);
             color: #fff;

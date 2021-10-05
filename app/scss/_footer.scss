@@ -1,0 +1,61 @@
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 10px 0;
+    transition: all 0.5s;
+    font-family: "Lato", sans-serif;
+    font-size: 10px;
+    color: #ccc;
+    text-shadow: 0 0 5px #000;
+    animation: color 5s infinite;
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        & a {
+            display: block;
+            &:first-child{
+                color: #00f;
+            }
+            &:last-child{
+                color: #000;
+            }
+        }
+        & .link {
+            display: flex;
+            flex-direction: column-reverse;
+            position: absolute;
+            padding: 5px;
+            right: 90px;
+            top: -5px;
+            overflow: hidden;
+            opacity: 0;
+            height: 0;
+            width: 0;
+        }
+    }
+}
+
+.dev {
+    &__name {
+        position: relative;
+        &:hover > .link {
+            overflow: visible;
+            opacity: 1;
+            height: auto;
+            width: max-content;
+        }
+    }
+}
+
+@keyframes color {
+    0% {
+        color: #ccc;
+    }
+    50% {
+        color: #000;
+    }
+    100% {
+        color: #ccc;
+    }
+}
